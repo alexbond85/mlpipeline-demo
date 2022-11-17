@@ -1,11 +1,11 @@
-name: basic_cleaning
+name: download_training_data
 
 
 entry_points:
   main:
     parameters:
 
-      input_artifact:
+      data_path:
         description: Name of the input artifact in W&B
         type: string
 
@@ -13,13 +13,4 @@ entry_points:
         description: Name for the output artifact
         type: string
 
-      output_type:
-        description: Type of the output artifact in W&B.
-        type: string
-
-      output_description:
-        description: A brief description of the output artifact
-        type: string
-
-
-    command: "python run.py --input_artifact {input_artifact} --output_artifact {output_artifact} --output_type {output_type} --output_description {output_description}"
+    command: "python run.py --data_path {data_path} --output_artifact {output_artifact}"
