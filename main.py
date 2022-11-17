@@ -17,10 +17,11 @@ def go(config: DictConfig):
         mlflow.run(
             os.path.join(components_path, "download"),
             env_manager="local",
+            run_name="doitnow",
             parameters={
                 "data_path": "path/do/data.vsb",
                 "output_artifact": "path/do/data/in/mlflow"
-            }
+            },
         )
 
     if "clean" in active_steps:
@@ -32,6 +33,16 @@ def go(config: DictConfig):
                 "output_artifact": "clean_sample.csv",
                 "output_type": "clean_sample",
                 "output_description": "Data with outliers and null values removed",
+            }
+        )
+
+    if "train" in active_steps:
+        mlflow.run(
+            os.path.join(components_path, "train"),
+            env_manager="local",
+            parameters={
+                "input_data": "sample.csv:latest",
+                "output_artifact": "clean_sample.csv",
             }
         )
 

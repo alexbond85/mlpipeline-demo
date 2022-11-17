@@ -1,18 +1,16 @@
-name: download_training_data
+name: train_model
 
 
 entry_points:
   main:
     parameters:
 
-      data_path:
+      input_data:
         description: Name of the input artifact in W&B
         type: string
-        default: a/b/c
 
       output_artifact:
         description: Name for the output artifact
         type: string
-        default: asdf
 
-    command: "python run.py --data_path {data_path} --output_artifact {output_artifact}"
+    command: "python run.py --input_data {input_data} --output_artifact {output_artifact}"

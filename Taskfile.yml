@@ -5,8 +5,9 @@ tasks:
   clean:
     cmds:
       - |
-        rm mlflow.db
+        rm -f mflow.db
         rm -rf mlruns
+        rm -rf outputs
 
   mlflow-start:
     cmds:
