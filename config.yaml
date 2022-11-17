@@ -1,0 +1,6 @@
+main:
+  project_name: mlops_learning
+  experiment_name: learning_tracking
+  components_repo_path:
+  steps: download
+
