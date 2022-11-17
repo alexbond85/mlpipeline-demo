@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mlpipe"
+name = "mlpipeline"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Bondarenko <alexander.bondarenko@shippeo.com>"]
